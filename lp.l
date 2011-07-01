@@ -11,8 +11,7 @@
 
 %%
 
-[ \t]				{}
-[\r\n]				{ return NEWLINE; }
+[ \r\n\t]			{}
 
 "\\/"				{ return LEX_OR; } 
 "/\\"				{ return LEX_AND; }

@@ -19,7 +19,6 @@
 
 %parse-param{Node& root}
 
-%token NEWLINE
 %token LEX_OPEN_PAR LEX_CLOSE_PAR
 
 %token LEX_NOT
@@ -39,7 +38,7 @@
 %type <tNode> formula simple_formula atom prefix_connectives binary_connectives
 %%
 
-root			: formula NEWLINE			{ root = *($1); }
+root			: formula 				{ root = *($1); }
 			;
 
 simple_formula		: prefix_connectives simple_formula	{ $$ = $1; $1->setLeft($2); } 
