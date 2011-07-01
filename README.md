@@ -14,10 +14,9 @@ Todo
 * Implement every Normal form convertion
 * Implement unit resolution
 * Implement DPLL
+
 Example
 -------
-* To call lp : echo "A /\ B \/ \!(C->D)" | ./lp 
-stands for 'A or B or NOT(C IMPLIES D)'
-
+* To check 'A or B or NOT(C IMPLIES D)' : echo "A /\ B \/ \!(C->D)" | ./lp 
 * Parameters are --sat (resp. --valid) for checking satisfiability (resp. validity) of the formula.
 
