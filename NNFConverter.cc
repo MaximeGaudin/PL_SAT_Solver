@@ -1,5 +1,4 @@
 #include "NNFConverter.hpp"
-#include <iostream>
 
 Node* NNF_PR_1(Node* formula) {
 	if(formula->getType() == PREFIX_CONNECTIVE && formula->getValue() == LEX_NOT 

@@ -9,6 +9,7 @@
 #include "dot.hpp"
 
 #include "NNFConverter.hpp"
+#include "CNFConverter.hpp"
 
 #include "parser.hpp"
 
@@ -74,8 +75,13 @@ int main(int argc, char **argv)
 	if(argc == 1 || (argc == 2 && string(argv[1], 5) == string("--sat", 5))) 
 		cout << "Is SAT :" << ( SAT ( &root, interpretation, 0, props.size() ) ? "Yes" : "No" ) << endl;
 
-	if(argc == 1 || (argc == 2 && string(argv[1], 5) == string("--nnf", 5))) { 
+	if(argc == 2 && string(argv[1], 5) == string("--nnf", 5)) { 
 		Convert2NNF(&root); 
+		dotExport("ast.dot", &root);
+	}
+
+	if(argc == 2 && string(argv[1], 5) == string("--cnf", 5)) { 
+		Convert2CNF(&root); 
 		dotExport("ast.dot", &root);
 	}
 

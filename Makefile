@@ -23,7 +23,10 @@ bin/lexer.o: lexer.cc parser.hpp
 bin/NNFConverter.o: NNFConverter.cc NNFConverter.hpp
 	g++ $(FLAGS) -c -o bin/NNFConverter.o NNFConverter.cc
 
-lp: parser.cc lexer.cc main.cc bin/NNFConverter.o bin/dot.o bin/Node.o bin/parser.o bin/lexer.o
+bin/CNFConverter.o: CNFConverter.cc CNFConverter.hpp
+	g++ $(FLAGS) -c -o bin/CNFConverter.o CNFConverter.cc
+
+lp: parser.cc lexer.cc main.cc bin/CNFConverter.o bin/NNFConverter.o bin/dot.o bin/Node.o bin/parser.o bin/lexer.o
 	g++ $(FLAGS) -o lp bin/*.o main.cc
 
 .PHONY: clean mrproper
