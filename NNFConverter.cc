@@ -85,12 +85,12 @@ Node* NNF_PR_7(Node* formula) {
 	if(formula->getType() == BINARY_CONNECTIVE && formula->getValue() == LEX_IFF) {
 		Node* tmp = new Node(BINARY_CONNECTIVE, LEX_AND);
 
-		Node* tmp2 = new Node(PREFIX_CONNECTIVE, LEX_IMPLIES);
+		Node* tmp2 = new Node(BINARY_CONNECTIVE, LEX_IMPLIES);
 		tmp2->setLeft(formula->getLeft());
 		tmp2->setRight(formula->getRight());
 		Convert2NNF(tmp2);
 
-		Node* tmp3 = new Node(PREFIX_CONNECTIVE, LEX_IMPLIES);
+		Node* tmp3 = new Node(BINARY_CONNECTIVE, LEX_IMPLIES);
 		tmp3->setLeft(formula->getRight());
 		tmp3->setRight(formula->getLeft());
 		Convert2NNF(tmp3);
