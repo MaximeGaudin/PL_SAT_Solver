@@ -1,4 +1,4 @@
-FLAGS=-O2 -g
+FLAGS=-g
 
 all: lp
 

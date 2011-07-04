@@ -67,7 +67,7 @@ bool SAT ( Node* root, map< int, bool > interpretation, int last, int propsCount
 
 int main(int argc, char **argv)
 {
-	Node root; yyparse(root); dotExport("ast.dot", &root);
+	Node root; yyparse(root); 
 	vector < int > props = getAllPropositions( &root );
 	map < int, bool > interpretation; for( int i = 0; i < props.size(); ++i ) interpretation[props[i]] = false; 
 

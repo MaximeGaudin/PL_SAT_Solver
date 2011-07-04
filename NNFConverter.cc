@@ -1,4 +1,5 @@
 #include "NNFConverter.hpp"
+#include <iostream>
 
 Node* NNF_PR_1(Node* formula) {
 	if(formula->getType() == PREFIX_CONNECTIVE && formula->getValue() == LEX_NOT 
@@ -87,13 +88,15 @@ Node* NNF_PR_7(Node* formula) {
 		Node* tmp2 = new Node(PREFIX_CONNECTIVE, LEX_IMPLIES);
 		tmp2->setLeft(formula->getLeft());
 		tmp2->setRight(formula->getRight());
+		Convert2NNF(tmp2);
 
 		Node* tmp3 = new Node(PREFIX_CONNECTIVE, LEX_IMPLIES);
 		tmp3->setLeft(formula->getRight());
 		tmp3->setRight(formula->getLeft());
+		Convert2NNF(tmp3);
 
-		tmp->setLeft(NNF_PR_6(tmp2));
-		tmp->setRight(NNF_PR_6(tmp3));
+		tmp->setLeft(tmp2);
+		tmp->setRight(tmp3);
 
 		return tmp;
 	}
