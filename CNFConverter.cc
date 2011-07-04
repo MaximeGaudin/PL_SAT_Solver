@@ -53,7 +53,7 @@ void _Convert2CNF ( Node* formula ) {
 	*formula = *CNF_PR_2(formula);
 
 	_Convert2CNF(formula->getLeft());
-//	_Convert2CNF(formula->getRight());
+	_Convert2CNF(formula->getRight());
 }
 
 void Convert2CNF (Node* formula) {
