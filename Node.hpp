@@ -17,6 +17,7 @@ class Node
 	public:
 		Node();
 		Node(NodeType type, int value);
+		~Node();
 	
 		bool isTrue ( map < int, bool > interpretation );
 

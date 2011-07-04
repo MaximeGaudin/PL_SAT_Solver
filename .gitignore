@@ -1,6 +1,9 @@
-lp
 .*.swp
+*.o
+
+lp
 parser.hpp
 parser.cc
 lexer.cc
 ast.dot
+

@@ -14,6 +14,11 @@ Node::Node ( NodeType type, int value ) {
 	_value = value;
 }
 
+Node::~Node ( ) {
+	if(_children[0] != NULL) delete _children[0];
+	if(_children[1] != NULL) delete _children[1];
+}
+
 string Node::pretty() { 
 	if(_type == PROPOSITIONAL_VARIABLE) {
 		stringstream ss; string s;
