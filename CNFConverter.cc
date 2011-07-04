@@ -12,10 +12,10 @@ Node* CNF_PR_1(Node* formula) {
 		tmp2->setLeft(F1); tmp2->setRight(F3);
 
 		Node* tmp3 = new Node(BINARY_CONNECTIVE, LEX_OR);
-		tmp3->setLeft(F2); tmp2->setRight(F3);
+		tmp3->setLeft(F2); tmp3->setRight(F3);
 
 		Node* tmp = new Node(BINARY_CONNECTIVE, LEX_AND);
-		tmp->setLeft(tmp2); tmp->setLeft(tmp3);
+		tmp->setLeft(tmp2); tmp->setRight(tmp3);
 
 		return tmp; 
 	}
@@ -34,10 +34,10 @@ Node* CNF_PR_2(Node* formula) {
 		tmp2->setLeft(F1); tmp2->setRight(F2);
 
 		Node* tmp3 = new Node(BINARY_CONNECTIVE, LEX_OR);
-		tmp3->setLeft(F1); tmp2->setRight(F3);
+		tmp3->setLeft(F1); tmp3->setRight(F3);
 
 		Node* tmp = new Node(BINARY_CONNECTIVE, LEX_AND);
-		tmp->setLeft(tmp2); tmp->setLeft(tmp3);
+		tmp->setLeft(tmp2); tmp->setRight(tmp3);
 
 		return tmp; 
 	}
@@ -52,8 +52,8 @@ void _Convert2CNF ( Node* formula ) {
 	*formula = *CNF_PR_1(formula);
 	*formula = *CNF_PR_2(formula);
 
-	Convert2CNF(formula->getLeft());
-	Convert2CNF(formula->getRight());
+	_Convert2CNF(formula->getLeft());
+//	_Convert2CNF(formula->getRight());
 }
 
 void Convert2CNF (Node* formula) {
