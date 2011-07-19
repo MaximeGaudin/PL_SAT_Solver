@@ -11,7 +11,7 @@
 #include "NNFConverter.hpp"
 #include "CNFConverter.hpp"
 
-#include "parser.hpp"
+#include "parser.hh"
 
 extern int yyparse(Node& root);
 
@@ -73,6 +73,7 @@ int main(int argc, char **argv)
 	map < int, bool > interpretation; for( int i = 0; i < props.size(); ++i ) interpretation[props[i]] = false; 
 
 	if(argc == 1 || (argc == 2 && string(argv[1], 5) == string("--sat", 5))) 
+		//Convert2CNF(&root); 
 		cout << "Is SAT :" << ( SAT ( &root, interpretation, 0, props.size() ) ? "Yes" : "No" ) << endl;
 
 	if(argc == 2 && string(argv[1], 5) == string("--nnf", 5)) { 

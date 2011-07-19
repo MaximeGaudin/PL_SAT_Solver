@@ -2,7 +2,7 @@
 	#include <iostream>
 	#include "Node.hpp"
 
-	#include "parser.hpp"
+	#include "parser.hh"
 
 	extern "C" int yywrap() { }
 

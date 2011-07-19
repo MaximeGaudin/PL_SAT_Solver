@@ -8,3 +8,8 @@ parser.hpp
 parser.cc
 lexer.cc
 ast.pdf
+
+CMakeFiles/
+CMakeCache.txt
+Makefile
+cmake_install.cmake
