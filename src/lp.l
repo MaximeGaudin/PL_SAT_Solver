@@ -4,7 +4,7 @@
 
 	#include "parser.hh"
 
-	extern "C" int yywrap() { }
+	extern "C" int yywrap() { return 0; }
 
 	using namespace std;
 %}
