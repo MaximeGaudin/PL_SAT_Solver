@@ -13,7 +13,7 @@ Right now, the program use the Truth-table method to get an answer and therefore
 
 Finally, this code provides a ready to use flex/bison parser for the laziest of you !
 Todo
-~~~~
+----
 * Implement unit resolution
 * Implement DPLL
 
